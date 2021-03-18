@@ -33,6 +33,8 @@ Here we try to explain what is state. The state is the representation informatio
 <img src="media/tic-tac-toe-states.png" alt="drawing" width="400"/>
 </p>
 
+Note that the white "X" or "O" indicates the current turn for two players.
+
 Given a state, we have one or multiple choices of available actions corresponding to the state. Let us take the first state in the above picture as example. The available actions can be listed as following:
 <!--
 ![dsfdf](media/tic-tac-toe-case1.png)-->
@@ -81,6 +83,38 @@ Let us try to foresee by planning the move.
 <img src="media/tree.png" alt="drawing" width="400"/>
 </p>
 
-In the above picture, we illustrate the planning using a tree structure. Since the tree is large, only a part of the entire tree is shown in the picture.
+In the above picture, we illustrate the planning using a tree structure. Since the tree is large, only a part of the entire tree is shown in the picture. To simplfy the representation of above picture, we use the following illustration, simply using nodes and edges.
+
+
+<p align="center">
+<img src="media/tree-representation.png" alt="drawing" width="800"/>
+</p>
+
+The node represent state and the edge represent available action. This allows us to analyse the resultant states of each action and its further consequence. Let us look deeper into the tree .
+
+<p align="center">
+<img src="media/tree-deep.png" alt="drawing" width="500"/>
+</p>
+
+As you might notice, each state has a blue number. The value means the winning probability of "O" given the current state (or the value in reinforcement learning). The above picture shows the deep tree with 3 steps looking ahead. 
+
+### How to traverse the tree
+
+So the next question might be how to jump from the parrent node to the child node. Since the blue number for each state means winning ratio of Player "O", the rules of tranverse is easily set as:
+
+- Maximize the winning ratios of "O" at the turn of "O".
+- Minimize the winning ratios of "O" at the turn of "X".
+
+Such a rule is known as "MinMax", which is a famous algorithm in game theory.
+
+<p align="center">
+<img src="media/minmax.png" alt="drawing" width="500"/>
+</p>
+
+Why do we try to minimize the winning ratios of "O" at the turn of "X"? Because we try to make the player "X", the opponent of "O", be "smart" on his decision. An analogy I like to think about is that people will tend to play against the opponent is better or at least the same with their own for chess play to improve their skill of playing chess. In general, "MinMax" algorithm or the rules of tranverse can impose some contraints for explorations that finds the optimal policy.
+
+### How to expand or "grow" the tree
+
+ After you tranverse the tree using "MinMax" algorithm, you will reach leaf nodes (the bottom of the tree). If you want to grow the tree to see a few more move ahead, you need to expand (or in other word "grow") the tree. 
 
 
