@@ -3,8 +3,10 @@
 In this tutorial, you will learn:
 
 -  The basics theory of MCTS
--  How to code a MCTS
--  Intuition behind MCTS (Why it works!)
+-  A naive AI for tic-tac-toe
+-  MCTS for tic-tac-toe
+-  MCTS with UCB1 for tic-tac-toe
+-  Intuition behind UCB1 (Why it works!)
 
 We will build the knowledge upon the real application (Tic Tac Toe) to get intuitions about what, how and why MCTS works well in chess plays and other AI applications.
 
@@ -230,7 +232,7 @@ When all the sibling node has been visited many time, the difference among their
 In conclusion, UCB will encourage "Exploration" when the number of visits, n, for sibling nodes is small, while encourage "Exploitation" when n is large. This make sense in some level since at the begining of playouts, the estimation of winning ratio is not too accurate. Encouraging "Exploitation" will prevent the cases that miss out the nodes leading to the optimal policy. When n is large, the estimation become more accurate. So encouraging "Exploitation" will make the tree grow deeper, which contributes to the data efficiency of finding optimal solution.
 
 
-Reference:
+**Reference**:
 
 1. Clear Explaination by John Levine: [link](https://www.youtube.com/watch?v=UXW2yZndl7U&t=2s&ab_channel=JohnLevine)
 
