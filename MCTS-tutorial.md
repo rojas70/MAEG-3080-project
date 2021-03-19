@@ -205,7 +205,7 @@ For the sake of compuational convinience, we maximize the negative probability f
 
 Where K is the number of turns, here we assume that the first turn is your turn. 
 
-### 4.1 Intuition of UCB1 
+### Intuition of UCB1 
 
 Why does UCB1 work for balancing the tradoff of "exploration" and "exploitation"?
 
@@ -229,7 +229,13 @@ When all the sibling node has been visited many time, the difference among their
 
 In conclusion, UCB will encourage "Exploration" when the number of visits, n, for sibling nodes is small, while encourage "Exploitation" when n is large. This make sense in some level since at the begining of playouts, the estimation of winning ratio is not too accurate. Encouraging "Exploitation" will prevent the cases that miss out the nodes leading to the optimal policy. When n is large, the estimation become more accurate. So encouraging "Exploitation" will make the tree grow deeper, which contributes to the data efficiency of finding optimal solution.
 
-### 4.2 
 
+Reference:
+
+1. Clear Explaination by John Levine: [link](https://www.youtube.com/watch?v=UXW2yZndl7U&t=2s&ab_channel=JohnLevine)
+
+1. Chinese Course on MCTS: [link](https://www.youtube.com/watch?v=niIaKaWIRX0&ab_channel=%E4%B8%AD%E5%9B%BD%E5%A4%A7%E5%AD%A6MOOC-%E6%85%95%E8%AF%BE)
+
+1. Survey Paper for MCTS (Deep Understanding on MCTS and its variations): [link](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6145622&casa_token=AecTrST5MJYAAAAA:1UepYH0lA9-jdodOaItjidj0ie8kcKFAH65qh4F3AzkX1wiWrfNj4lb5Um-w7RJChEu0heo3&tag=1)
 
 
