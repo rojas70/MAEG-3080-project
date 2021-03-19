@@ -100,8 +100,8 @@ As you might notice, each state has a blue number. The value means the winning p
 
 So the next question might be how to jump from the parrent node to the child node. Since the blue number for each state means winning ratio of Player "O", the rules of tranverse is easily set as:
 
-- Maximize the winning ratios of "O" at the turn of "O".
-- Minimize the winning ratios of "O" at the turn of "X".
+- Choose the available action with Maximum winning ratios of "O" at the turn of "O".
+- Choose the available action with Minimum winning ratios of "O" at the turn of "X".
 
 Such a rule is known as "MinMax", which is a famous algorithm in game theory.
 
@@ -188,10 +188,48 @@ After you play with MCTS a while, you will find out there is a problem with the 
 UCB1 (Upper Confidence Bound) is able to balance the "Exploitation" and "Exploration" for MCTS. The UCB1 value for a state can be formulated as
 
 <p align="center">
-<img src="https://render.githubusercontent.com/render/math?math=UCB = {\frac{t}{n}} + 2*\sqrt{\frac{ln(N)}{n}}">
+<img src="https://render.githubusercontent.com/render/math?math=UCB = {\frac{t}{n}} %2B 2\sqrt{\frac{ln(N)}{n}}">
 </p>
 
+where N is the n value for its parent states.
 
+"Minmax" algorithm with UCB1 can be formulated as
+
+- Choose the available action with Maximum UCB for the your turn.
+- Choose the available action with Minimum UCB for the opponent turn.
+
+For the sake of compuational convinience, we maximize the negative probability for the opponent turns. The "Minmax" algorithm with UCB1 can be reformulated as
+
+- <img src="https://render.githubusercontent.com/render/math?math=UCB = {\frac{t}{n}} * (-1)^{k%2B1} %2B 2\sqrt{\frac{ln(N)}{n}}">
+- Choose the available action with Maximum UCB.
+
+Where K is the number of turns, here we assume that the first turn is your turn. 
+
+### 4.1 Intuition of UCB1 
+
+Why does UCB1 work for balancing the tradoff of "exploration" and "exploitation"?
+
+Let look at the following cases:
+
+-Case 1:
+
+<p align="center">
+ <img src="media/ucb-case1.png" alt="drawing" width="600"/>
+</p>
+
+At the bottom, there are two leaf nodes has been visited since n is not equal to zero, While the other leaf nodes remain un-visited. You will find that UCB values for un-visited leaf nodes tend to infinity. Following the rule of "MinMax", those nodes that has never been visited before will be selected. In this case, the UCB values will encourage "exploration".
+
+
+-Case 2:
+<p align="center">
+ <img src="media/ucb-case2.png" alt="drawing" width="600"/>
+</p>
+
+When all the sibling node has been visited many time, the difference among their the terms in UCB <img src="https://render.githubusercontent.com/render/math?math=2\sqrt{\frac{ln(N)}{n}}"> will be small. However, UCB will weight more on the difference of the other term <img src="https://render.githubusercontent.com/render/math?math={\frac{t}{n}} * (-1)^{k%2B1}">. In this case, the UCB values will encourage "exploitation".
+
+In conclusion, UCB will encourage "Exploration" when the number of visits, n, for sibling nodes is small, while encourage "Exploitation" when n is large. This make sense in some level since at the begining of playouts, the estimation of winning ratio is not too accurate. Encouraging "Exploitation" will prevent the cases that miss out the nodes leading to the optimal policy. When n is large, the estimation become more accurate. So encouraging "Exploitation" will make the tree grow deeper, which contributes to the data efficiency of finding optimal solution.
+
+### 4.2 
 
 
 
