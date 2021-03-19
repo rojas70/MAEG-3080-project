@@ -166,11 +166,32 @@ As the above picture shows, we divide the cases into two:
 You might notice that the value is updated backward for the tree, which is similar to the backpropagation of gradient decent for neural neworks.
 
 
-### 3.7 Full Procedure of MCTS 
+### 3.7 A full proess of MCTS 
 
 <p align="center">
- <img src="media/mcts-process.png" alt="drawing" width="800"/>
+ <img src="media/mcts-process.png" alt="drawing" width="1000"/>
 </p>
+
+The process of MCTS for one playout is set as the follow sequences: 
+
+- Selection -> Expasion -> Rollout -> Backpropagation. 
+
+For MCTS, in order to approximate the probabilities of winning ratios accurately, we will try to execute playouts as many as possible.
+
+
+## 4 Monte Carlos Tree Search with UCB1
+
+After you play with MCTS a while, you will find out there is a problem with the original MCTS algorithm. Specifically, "MinMax" algorithm will always choose actions with the maximum probabilites. At the beginning of playouts when the tree is small, the estimated probabilies might be not accurated due to its small sampling number n. This might lead to choose sub-optimal actions, while other actions that might be optimal will be not selected. In the terminology of reinforcement learning, the sub-optimal actions are "exploited" too much, leaving other actions "un-explored".
+
+"Exploitation and Exploration" is well known tradeoff in reinforcement learning. One might need to balance the tradeoff in order to find an optimal policy. 
+
+UCB1 (Upper Confidence Bound) is able to balance the "Exploitation" and "Exploration" for MCTS. The UCB1 value for a state can be formulated as
+
+<p align="center">
+<img src="https://render.githubusercontent.com/render/math?math=UCB = {\frac{t}{n}} + 2*\sqrt{\frac{ln(N)}{n}}">
+</p>
+
+
 
 
 
