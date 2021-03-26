@@ -1,4 +1,4 @@
-# Monte Carlos Tree Search (MCTS) Tutorial
+# 02-Monte Carlos Tree Search (MCTS) Tutorial
 
 In this tutorial, you will learn:
 
