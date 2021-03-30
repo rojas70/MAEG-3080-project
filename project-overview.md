@@ -7,9 +7,13 @@
 *  **Time** 
 
 	**Tutorial #0** and **#1**: `2021-04-02, Friday, 10.30am~11.30am`
+   
 	**Tutorial #2**: `2021-04-09, Friday, 10.30am~11.30am`
+   
 	**Tutorial #3**: `2021-04-16, Friday, 10.30am~11.30am`
+   
 	**Project Time**: `From 2021-04-16 to around 2021-05-20` (_Deadline to be announced_)
+   
 	**Q&A Time**: `0.5 hour after each tutoiral, Every Friday after 2021-04-16, 10.30am~11.30am`
 
 ## Project Tutorial Outline

@@ -16,9 +16,10 @@ Pycharm is a good IDE (Integrated Development Enviroment) for python, especially
 	 
 
 * Pycharm Professional (recommended)
-		1.Go to official webiste [link](https://www.jetbrains.com/pycharm/).
-		2. Sign up an account with CUHK student email for free
-		3. Download and install Pycharm Pro and activate.
+  
+	1. Go to official webiste [link](https://www.jetbrains.com/pycharm/).
+	1. Sign up an account with CUHK student email for free
+	1. Download and install Pycharm Pro and activate.
 
 
 ## 2. How to Setup Up a Pycharm Project
