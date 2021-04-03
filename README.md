@@ -7,7 +7,7 @@ This is the code repository for MAEG-3080 course project, including tutorials, c
 
 **Tutorial links:**
 * [00-Setting Up IDE](https://github.com/linhongbin-ws/MAEG-3080-project/blob/master/00-Setting-Up-IDE.md)
-* [01-Pytorch Tutorial](http://nbviewer.jupyter.org/github/linhongbin-ws/MAEG-3080-project/blob/master/01-pytorch-tutorial.ipynb)
+* [01-Pytorch Tutorial](https://colab.research.google.com/github/linhongbin-ws/MAEG-3080-project/blob/master/01-pytorch-tutorial.ipynb)
 * 02-Monte Carlo Tree Search Tutorial (Under Development)
 * 03- Tutorial (Under Development)
 

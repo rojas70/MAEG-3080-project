@@ -8,3 +8,5 @@ ppt/~$outlines.pptx
 .ipynb_checkpoints/
 
 model.ckpt
+
+.DS_Store
