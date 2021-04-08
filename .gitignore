@@ -10,3 +10,5 @@ ppt/~$outlines.pptx
 model.ckpt
 
 .DS_Store
+
+__pycache__/
