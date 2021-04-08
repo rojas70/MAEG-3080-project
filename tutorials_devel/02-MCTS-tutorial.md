@@ -19,7 +19,7 @@ Tic-Tac-Toe is a game that two players take turns playing on a three-by-three bo
 Try this online game to get a feeling of Tic-Tac-Toe. [[link](https://playtictactoe.org/)]
 
 <p align="center">
-<img src="media/online-game.png" alt="drawing" width="300"/>
+<img src="../media/online-game.png" alt="drawing" width="300"/>
 </p>
 
 In this tutorial, we will try to develop a program (sophisticated AI) that will achieve human-level AI for the Tic-Tac-Toe Game.
@@ -30,7 +30,7 @@ Here we try to explain what is state. The state is the representation informatio
 
 <!--![dsfdf](media/tic-tac-toe-states.png)-->
 <p align="center">
-<img src="media/tic-tac-toe-states.png" alt="drawing" width="400"/>
+<img src="../media/tic-tac-toe-states.png" alt="drawing" width="400"/>
 </p>
 
 Note that the white "X" or "O" indicates the current turn for two players.
@@ -39,7 +39,7 @@ Given a state, we have one or multiple choices of available actions correspondin
 <!--
 ![dsfdf](media/tic-tac-toe-case1.png)-->
 <p align="center">
-<img src="media/tic-tac-toe-case1.png" alt="drawing" width="400"/>
+<img src="../media/tic-tac-toe-case1.png" alt="drawing" width="400"/>
 </p>
 
 The player can put the "O"s to position #1 to #8 as the above picture shows. 
@@ -53,13 +53,13 @@ Just like Doctor Strange!
 ![](media/doctor-strange.gif)
 [<img src="media/doctor-strange.gif" width="250"/>](media/doctor-strange.gif)-->
 <p align="center">
-<img src="media/doctor-strange.gif" alt="drawing" width="400"/>
+<img src="../media/doctor-strange.gif" alt="drawing" width="400"/>
 </p>
 
 For example, given action 1, we can do hundreds of simulations to estimate the winning ratio. Eventually, you might calculate the winning ratios for states like this
 
 <p align="center">
-<img src="media/tic-tac-toe-action-winning-ratio.png" alt="drawing" width="400"/>
+<img src="../media/tic-tac-toe-action-winning-ratio.png" alt="drawing" width="400"/>
 </p>
 
 The number in black in the above picture is the probability of winning ratio. Note that probabilities of all actions sum to 1. Based on the result, you can make a "smart" moving, the one with the highest probability. That is Action 5, with a probability of 0.89, in the above picture.
@@ -80,20 +80,20 @@ So are there some methods to create a more data-efficient AI? You know when prof
 Let us try to foresee by planning the move.
 
 <p align="center">
-<img src="media/tree.png" alt="drawing" width="400"/>
+<img src="../media/tree.png" alt="drawing" width="400"/>
 </p>
 
 In the above picture, we illustrate the planning using a tree structure. Since the tree is large, only a part of the entire tree is shown in the picture. To simplify the representation of the above picture, we use the following illustration, simply using nodes and edges.
 
 
 <p align="center">
-<img src="media/tree-representation.png" alt="drawing" width="800"/>
+<img src="../media/tree-representation.png" alt="drawing" width="800"/>
 </p>
 
 The node represents state and the edge represents available action. This allows us to analyze the resultant states of each action and its further consequence. Let us look deeper into the tree.
 
 <p align="center">
-<img src="media/tree-deep.png" alt="drawing" width="500"/>
+<img src="../media/tree-deep.png" alt="drawing" width="500"/>
 </p>
 
 As you might notice, each state has a blue number. The value means the winning probability of "O" given the current state (or the value in reinforcement learning). The above picture shows the deep tree with 3 step-look ahead. 
@@ -108,7 +108,7 @@ So the next question might be how to jump from the parent node to the child node
 Such a rule is known as "MinMax", which is a famous algorithm in game theory.
 
 <p align="center">
-<img src="media/minmax.png" alt="drawing" width="500"/>
+<img src="../media/minmax.png" alt="drawing" width="500"/>
 </p>
 
 Why do we try to minimize the winning ratios of "O" at the turn of "X"? Because we try to make the player "X", the opponent of "O", be "smart" on his decision. An analogy I like to think about is that people will tend to play against the opponent is better or at least the same with their own for chess play to improve their skill of playing chess. In general, the "MinMax" algorithm or the rules of traverse can impose some constraints for the exploration that finds the optimal policy.
@@ -121,7 +121,7 @@ Why do we try to minimize the winning ratios of "O" at the turn of "X"? Because 
  - Initialize the nodes with initial values. In our case, just we initialize the value of the winning ratio to zero.
 
 <p align="center">
-<img src="media/tree-grow.png" alt="drawing" width="500"/>
+<img src="../media/tree-grow.png" alt="drawing" width="500"/>
 </p>
 
 [wiki link](https://zh.wikipedia.org/wiki/%E6%9E%81%E5%B0%8F%E5%8C%96%E6%9E%81%E5%A4%A7%E7%AE%97%E6%B3%95)
@@ -131,7 +131,7 @@ Why do we try to minimize the winning ratios of "O" at the turn of "X"? Because 
 From the perspective of frequentists, the probability of winning ratio can be estimated using statistics, such as the Monte Carlo methods. Let us check the following picture
 
 <p align="center">
-<img src="media/probability-calculation.png" alt="drawing" width="800"/>
+<img src="../media/probability-calculation.png" alt="drawing" width="800"/>
 </p>
 
 n is the number of game plays starting at the current state, t is the number of winning plays starting at the current state. The estimated probability of winning ratio is formulated as
@@ -147,7 +147,7 @@ As the <img src="https://render.githubusercontent.com/render/math?math=n"> grows
 For MCTS, after the traverse and expansion process, we will reach the leaf node. We will do rollout (or simulation in other words) when we find n=0.
 
 <p align="center">
-<img src="media/rollout.png" alt="drawing" width="400"/>
+<img src="../media/rollout.png" alt="drawing" width="400"/>
 </p>
 
 In the rollout, the learned policy will play against a random policy, which might be the policy that gives uniform random moves. After the simulation, we record the result.
@@ -159,7 +159,7 @@ In the rollout, the learned policy will play against a random policy, which migh
 After a rollout, we will update the tree based on the result of the rollout. 
 
 <p align="center">
- <img src="media/backpropagation.png" alt="drawing" width="600"/>
+ <img src="../media/backpropagation.png" alt="drawing" width="600"/>
 </p>
 
 As the above picture shows, we divide the cases into two:
@@ -173,7 +173,7 @@ You might notice that the value is updated backward for the tree, which is simil
 ### 3.7 A full process of MCTS 
 
 <p align="center">
- <img src="media/mcts-process.png" alt="drawing" width="1000"/>
+ <img src="../media/mcts-process.png" alt="drawing" width="1000"/>
 </p>
 
 The process of MCTS for one playout is set as the following sequences: 
@@ -218,7 +218,7 @@ Let look at the following cases:
 -Case 1:
 
 <p align="center">
- <img src="media/ucb-case1.png" alt="drawing" width="600"/>
+ <img src="../media/ucb-case1.png" alt="drawing" width="600"/>
 </p>
 
 At the bottom, there are two leaf nodes that have been visited since n is not equal to zero, While the other leaf nodes remain un-visited. You will find that UCB values for un-visited leaf nodes tend to infinity. Following the rule of "MinMax", those nodes that have never been visited before will be selected. In this case, the UCB values will encourage "exploration".
@@ -226,7 +226,7 @@ At the bottom, there are two leaf nodes that have been visited since n is not eq
 
 -Case 2:
 <p align="center">
- <img src="media/ucb-case2.png" alt="drawing" width="600"/>
+ <img src="../media/ucb-case2.png" alt="drawing" width="600"/>
 </p>
 
 When all the sibling node has been visited many time, the difference among their the terms in UCB <img src="https://render.githubusercontent.com/render/math?math=2\sqrt{\frac{ln(N)}{n}}"> will be small. However, UCB will weight more on the difference of the other term <img src="https://render.githubusercontent.com/render/math?math={\frac{t}{n}} * (-1)^{k%2B1}">. In this case, the UCB values will encourage "exploitation".
