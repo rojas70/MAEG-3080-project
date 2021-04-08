@@ -6,11 +6,11 @@ This is the code repository for MAEG-3080 course project, including tutorials, c
 **Overview:**
 * [Project overview](https://github.com/linhongbin-ws/MAEG-3080-project/blob/master/project-overview.md)
 
-**Tutorial links:**
-* 00-Setting Up IDE ([github link](https://github.
-  com/linhongbin-ws/MAEG-3080-project/blob/master/00-Setting-Up-IDE.md))
-* [01-Pytorch Tutorial](https://colab.research.google.com/github/linhongbin-ws/MAEG-3080-project/blob/master/01-pytorch-tutorial.ipynb)
-* 02-Monte Carlo Tree Search Tutorial (Under Development)
+**Tutorial links:** (_Note: use the following links for preview. If some of them fail to render, try to use the other link_)
+
+* 00-Setting Up IDE ([github link](https://github.com/linhongbin-ws/MAEG-3080-project/blob/master/00-Setting-Up-IDE.md))
+* 01-Pytorch Tutorial ([jupyter link](https://nbviewer.jupyter.org/github/linhongbin-ws/MAEG-3080-project/blob/master/01-pytorch-tutorial.ipynb)) ([colab link](https://colab.research.google.com/github/linhongbin-ws/MAEG-3080-project/blob/master/01-pytorch-tutorial.ipynb))
+* 02-Monte Carlo Tree Search Tutorial ([jupyter link](https://nbviewer.jupyter.org/github/linhongbin-ws/MAEG-3080-project/blob/master/02-MCTS-tutorial.ipynb)) ([colab link](https://colab.research.google.com/github/linhongbin-ws/MAEG-3080-project/blob/master/02-MCTS-tutorial.ipynb))
 * 03- Tutorial (Under Development)
 
 **Project code:**
